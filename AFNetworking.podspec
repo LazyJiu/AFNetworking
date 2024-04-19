@@ -11,7 +11,7 @@ Pod::Spec.new do |s|
   
   s.public_header_files = 'AFNetworking/AFNetworking.h'
   s.source_files = 'AFNetworking/AFNetworking.h'
-  s.resource_bundles = {'AFNetworking' => ['AFNetworking/PrivacyInfo.xcprivacy']}
+
   pch_AF = <<-EOS
 #ifndef TARGET_OS_IOS
   #define TARGET_OS_IOS TARGET_OS_IPHONE
@@ -76,4 +76,8 @@ EOS
     ss.public_header_files = 'UIKit+AFNetworking/*.h'
     ss.source_files = 'UIKit+AFNetworking'
   end
+
+  s.subspec 'PrivacyInfo' do |ss|
+    ss.resource_bundles = {'AFNetworking' => ['AFNetworking/PrivacyInfo.xcprivacy']}
+  end  
 end
